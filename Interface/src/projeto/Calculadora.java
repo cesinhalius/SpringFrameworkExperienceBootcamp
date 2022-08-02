@@ -25,8 +25,13 @@ public class Calculadora implements Operacoes {
 
 
     public void divisao(double num1, double num2) {
-        if(num1 == 0){
-            double total = num1 / num2;
+
+        double total;
+
+        if(num1 == 0 || num2 == 0){
+            total = 0;
+        }else{
+            total = num1 / num2;
             System.out.println("Divisão " + total);
         }
 
