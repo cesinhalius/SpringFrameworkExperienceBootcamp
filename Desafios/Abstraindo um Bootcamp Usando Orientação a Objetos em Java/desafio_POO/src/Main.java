@@ -75,6 +75,7 @@ public class Main {
 
         Dev devJose = new Dev();
         devJose.setNome("JOSE");
+        devJose.setIdade(20);
         devJose.InscreverBootcamp(bootcamp);
         System.out.println("Conteudo Inscrito Jose:" + devJose.getConteudoInscritos());
         devJose.progredir();

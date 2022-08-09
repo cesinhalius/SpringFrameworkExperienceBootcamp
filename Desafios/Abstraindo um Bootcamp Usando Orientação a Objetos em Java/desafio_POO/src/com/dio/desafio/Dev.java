@@ -27,6 +27,7 @@ public class Dev {
         return this.conteudoConcluido.stream().mapToDouble(Conteudo:: calcularXp).sum();
     }
     private String nome;
+    private int Idade;
     private Set<Conteudo> conteudoInscritos= new LinkedHashSet<>();
     private  Set<Conteudo> conteudoConcluido = new LinkedHashSet<>();
 
@@ -36,6 +37,14 @@ public class Dev {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public int getIdade() {
+        return Idade;
+    }
+
+    public void setIdade(int idade) {
+        Idade = idade;
     }
 
     public Set<Conteudo> getConteudoInscritos() {
@@ -59,8 +68,9 @@ public class Dev {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Dev dev = (Dev) o;
-        return nome.equals(dev.nome) && conteudoInscritos.equals(dev.conteudoInscritos) && conteudoConcluido.equals(dev.conteudoConcluido);
+        return Objects.equals(nome, dev.nome) && Objects.equals(conteudoInscritos, dev.conteudoInscritos) && Objects.equals(conteudoConcluido, dev.conteudoConcluido);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(nome, conteudoInscritos, conteudoConcluido);
